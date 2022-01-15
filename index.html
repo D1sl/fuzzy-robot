@@ -12,8 +12,20 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container w-50">
-            <p id="timer">
-                Time left: 50 seconds
+            <div class="timeleft">
+                <p>Time left:               
+                <span id="timer">
+                    0
+                </span>
+                 seconds
+            </p> 
+            </div>
+            <p>
+                Your score: 
+                <span id="score">
+
+                </span>
+                points
             </p>
         </div>
     </nav>
@@ -22,6 +34,12 @@
             <div class="row">
                 <h1>Code Quiz!</h1>
             </div>
+
+            <div class="d-grid gap-2 mt-5" id="starter">
+                <button class="btn btn-primary" id="starterbutton">Start</button>
+            </div>
+
+            <div class="questionnaire">
             <div class="row mt-3">
                 <h3 class="question" id="question">What do you call the program that is used to view web pages?</h3>
             </div>
@@ -31,10 +49,8 @@
                 <button class="btn btn-primary" id="ans3">Option 3</button>
             </div>
             <div class="row mt-5" id="answervalidation">
-                <h4>
-                    Correct!
-                </h4>
             </div>
+        </div>
         </div>
     </main>
     <script type="text/javascript" src="./assets/js/script.js"></script>
