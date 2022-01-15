@@ -148,8 +148,3 @@ function endQuiz() {
     document.querySelector(".endgame").style.display = 'block';
     finalScoreEl.textContent = timeLeft;
 } 
-
-
-
-countdown();
-

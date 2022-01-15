@@ -18,7 +18,7 @@
             <div class="scoretimer">
                 <p>Time left:
                     <span id="timer">
-                        0
+                        
                     </span>
                     seconds
                 </p>
@@ -37,12 +37,12 @@
 
             <div class="questionnaire">
                 <div class="row mt-3">
-                    <h3 class="question" id="question">What do you call the program that is used to view web pages?</h3>
+                    <h3 class="question" id="question"></h3>
                 </div>
                 <div class="d-grid gap-2 mt-5" id="answers">
-                    <button class="btn btn-primary" id="ans1">Option 1</button>
-                    <button class="btn btn-primary" id="ans2">Option 2</button>
-                    <button class="btn btn-primary" id="ans3">Option 3</button>
+                    <button class="btn btn-secondary" id="ans1"></button>
+                    <button class="btn btn-secondary" id="ans2"></button>
+                    <button class="btn btn-secondary" id="ans3"></button>
                 </div>
                 <div class="row mt-1" id="answervalidation">
                     <p>
@@ -54,6 +54,15 @@
                     Game Over!
                 </h3>
                 <p>Your final score is: <span id="finalscore"></span> points.</p>
+
+                <form>    
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon3">Your name</span>
+                        <input type="text" class="form-control">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
             </div>
         </div>
     </main>
