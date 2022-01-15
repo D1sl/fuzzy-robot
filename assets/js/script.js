@@ -155,6 +155,7 @@ function endQuiz() {
 
 // Store high scores
 submitButton.addEventListener("click", function(event) {
+    debugger;
     var oldScore = JSON.parse(localStorage.getItem(scoreStore));
     if (oldScore === null) {
         oldScore = Array();

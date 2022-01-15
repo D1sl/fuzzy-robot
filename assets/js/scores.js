@@ -1,5 +1,7 @@
 var scoreListEl = document.querySelector("#highscores");
+var clearBtn = document.querySelector("#clearscores");
 
+// List scores on page
 function listScores() {
     var highscore = JSON.parse(localStorage.getItem("highscore"));
     if (name && score === null) {
@@ -15,5 +17,13 @@ function listScores() {
 
     }
 }
+
+// Clear all scores
+clearBtn.addEventListener("click", clearAll);
+    function clearAll() {
+        localStorage.clear();
+        location.reload();
+    }
+
 
 listScores();
