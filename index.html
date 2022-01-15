@@ -13,12 +13,16 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container w-50">
             <div class="title">
-                <p>Code Quiz!</p>
+                <a href="scores.html">
+                    <button class="btn btn-secondary">
+                        High Scores
+                    </button>
+                </a>
             </div>
             <div class="scoretimer">
                 <p>Time left:
                     <span id="timer">
-                        
+
                     </span>
                     seconds
                 </p>
@@ -55,12 +59,12 @@
                 </h3>
                 <p>Your final score is: <span id="finalscore"></span> points.</p>
 
-                <form>    
+                <form>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon3">Your name</span>
                         <input type="text" class="form-control" id="name">
                     </div>
-                    
+
                     <button type="submit" class="btn btn-primary" id="submitscore">Submit</button>
                 </form>
             </div>
