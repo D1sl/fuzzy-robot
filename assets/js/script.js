@@ -4,10 +4,8 @@ var i = 0;
 var timeLeft = 60;
 var timerId;
 
-// Scores
-var score = 5;
+var finalScoreEl = document.querySelector("#finalscore");
 
-// Page element queryselectors
 var startButton = document.querySelector("#starterbutton")
 
 // Answer buttons
@@ -22,10 +20,11 @@ var questionEl = document.querySelector("#question");
 var ansValidatorEl = document.querySelector("#answervalidation");
 
 
-// Timer and score
+// Timer
 var timerEl = document.querySelector("#timer");
-var scoreEl = document.querySelector("#score");
-var finalScoreEl = document.querySelector("#finalscore");
+
+var message = document.querySelector("#answervalidation");
+
 
 // Questions
 var questions = [
@@ -53,7 +52,6 @@ var questions = [
 
 
 // MAIN LOGIC
-timerId = setInterval(countdown, 1000);
 function countdown() {
     // Remove a second from the time  
         timeLeft--;
@@ -61,10 +59,11 @@ function countdown() {
 
 }
 
-scoreEl.textContent = score;
 
-document.querySelector(".questionnaire").style.display = "none";
-document.querySelector(".endgame").style.display = "none";
+document.querySelector(".questionnaire").style.display = 'none';
+document.querySelector(".endgame").style.display = 'none';
+document.querySelector(".scoretimer").style.display = 'none';
+
 
 startButton.addEventListener("click", askQuestions);
 
@@ -72,6 +71,9 @@ startButton.addEventListener("click", askQuestions);
 questionHandler(0);
 
 function askQuestions() {
+    document.querySelector(".scoretimer").style.display = 'inline';
+    timerId = setInterval(countdown, 1000);
+
     console.log("Ask questions clicked");
     
     document.querySelector(".questionnaire").style.display = "block";
@@ -109,12 +111,12 @@ function checkAnswer(element) {
     correct = questions[i].correctAnswer;
     if (element.textContent === correct) {
       console.log("Right answer chosen");
-      score++;
-      scoreEl.textContent = score;
+      timeLeft = timeLeft + 10;
+      answerMessage("Correct!")
     } else {
-      console.log("Wrong answer chosen");
-      score--;
-      scoreEl.textContent = score;
+        console.log("Wrong answer chosen");
+        answerMessage("Incorrect!")
+      timeLeft = timeLeft - 10;
     }
 
     i++;
@@ -126,11 +128,25 @@ function checkAnswer(element) {
     }
   }
 
+  function answerMessage(messageContent) {
+      message.textContent = messageContent;
+      setTimeout(function() {
+          message.textContent = null;
+      }, 1500);
+  }
+
+
+
 function endQuiz() {
+
+    clearInterval(timerId);
+
+    document.querySelector(".scoretimer").style.display = 'none';
+
     console.log("Quiz has ended");
     document.querySelector(".questionnaire").style.display = 'none';
     document.querySelector(".endgame").style.display = 'block';
-    finalScoreEl.textContent = score;
+    finalScoreEl.textContent = timeLeft;
 } 
 
 
