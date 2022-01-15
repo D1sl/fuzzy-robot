@@ -13,15 +13,15 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container w-50">
             <div class="timeleft">
-                <p>Time left:               
-                <span id="timer">
-                    0
-                </span>
-                 seconds
-            </p> 
+                <p>Time left:
+                    <span id="timer">
+                        0
+                    </span>
+                    seconds
+                </p>
             </div>
             <p>
-                Your score: 
+                Your score:
                 <span id="score">
 
                 </span>
@@ -40,17 +40,23 @@
             </div>
 
             <div class="questionnaire">
-            <div class="row mt-3">
-                <h3 class="question" id="question">What do you call the program that is used to view web pages?</h3>
+                <div class="row mt-3">
+                    <h3 class="question" id="question">What do you call the program that is used to view web pages?</h3>
+                </div>
+                <div class="d-grid gap-2 mt-5" id="answers">
+                    <button class="btn btn-primary" id="ans1">Option 1</button>
+                    <button class="btn btn-primary" id="ans2">Option 2</button>
+                    <button class="btn btn-primary" id="ans3">Option 3</button>
+                </div>
+                <div class="row mt-5" id="answervalidation">
+                </div>
             </div>
-            <div class="d-grid gap-2 mt-5" id="answers">
-                <button class="btn btn-primary" id="ans1">Option 1</button>
-                <button class="btn btn-primary" id="ans2">Option 2</button>
-                <button class="btn btn-primary" id="ans3">Option 3</button>
+            <div class="endgame">
+                <h3>
+                    Game Over!
+                </h3>
+                <p>Your final score is: <span id="finalscore"></span> points.</p>
             </div>
-            <div class="row mt-5" id="answervalidation">
-            </div>
-        </div>
         </div>
     </main>
     <script type="text/javascript" src="./assets/js/script.js"></script>

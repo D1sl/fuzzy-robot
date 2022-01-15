@@ -25,6 +25,7 @@ var ansValidatorEl = document.querySelector("#answervalidation");
 // Timer and score
 var timerEl = document.querySelector("#timer");
 var scoreEl = document.querySelector("#score");
+var finalScoreEl = document.querySelector("#finalscore");
 
 // Questions
 var questions = [
@@ -36,17 +37,17 @@ var questions = [
     {
         question: "Question two",
         answers: ["1. Answer one", "2. Answer two", "3. Answer three"],
-        correctAnswer: "2"
+        correctAnswer: "1. Answer one"
     },
     {
         question: "Question three",
         answers: ["1. Answer one", "2. Answer two", "3. Answer three"],
-        correctAnswer: "2"
+        correctAnswer: "3. Answer three"
     },
     {
         question: "Question four",
         answers: ["1. Answer one", "2. Answer two", "3. Answer three"],
-        correctAnswer: "2"
+        correctAnswer: "1. Answer one2"
     },
 ] 
 
@@ -63,6 +64,7 @@ function countdown() {
 scoreEl.textContent = score;
 
 document.querySelector(".questionnaire").style.display = "none";
+document.querySelector(".endgame").style.display = "none";
 
 startButton.addEventListener("click", askQuestions);
 
@@ -86,6 +88,8 @@ function askQuestions() {
     ans3Btn.addEventListener("click", function() {
         checkAnswer(ans3Btn);
     });
+
+    questionHandler(0);
 }
 
 // Question handler
@@ -100,21 +104,34 @@ function questionHandler(i) {
 
 // Answer handler
 function checkAnswer(element) {
+
+    // Get the current questions index and correct answer and compare it to what the user chose
     correct = questions[i].correctAnswer;
     if (element.textContent === correct) {
-      console.log("Right");
+      console.log("Right answer chosen");
+      score++;
+      scoreEl.textContent = score;
     } else {
-      console.log("Wrong");
+      console.log("Wrong answer chosen");
+      score--;
+      scoreEl.textContent = score;
     }
+
     i++;
+
     if (i === questions.length) {
       endQuiz();
     } else {
-      askQuestions(i);
+      questionHandler(i);
     }
   }
 
-
+function endQuiz() {
+    console.log("Quiz has ended");
+    document.querySelector(".questionnaire").style.display = 'none';
+    document.querySelector(".endgame").style.display = 'block';
+    finalScoreEl.textContent = score;
+} 
 
 
 
