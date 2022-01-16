@@ -4,7 +4,7 @@
 
 This is an application that uses HTML, CSS (Bootstrap) and JavaScript. It iterates through questions and checks answers with each button press against the correct answer of each question. With wrong answers, 10 seconds is subtracted. At the end, the user can submit their name into the leaderboard.
 
-![Screenshot of the application](assets/images/screenshot.PNG)
+![Screenshot of the application](assets/images/screenshot.png)
 
 ---
 ## Project links
