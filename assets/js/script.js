@@ -11,6 +11,7 @@ var startButton = document.querySelector("#starterbutton")
 var ans1Btn = document.querySelector("#ans1");
 var ans2Btn = document.querySelector("#ans2");
 var ans3Btn = document.querySelector("#ans3");
+var ans4Btn = document.querySelector("#ans4");
 var submitButton = document.querySelector("#submitscore");
 var questionEl = document.querySelector("#question");
 var ansValidatorEl = document.querySelector("#answervalidation");
@@ -20,28 +21,27 @@ document.querySelector(".questionnaire").style.display = 'none';
 document.querySelector(".endgame").style.display = 'none';
 document.querySelector(".scoretimer").style.display = 'none';
 
-
 // Questions
 var questions = [
     {
-        question: "Question one",
-        answers: ["1. Answer one", "2. Answer two", "3. Answer three"],
-        correctAnswer: "2. Answer two"
+        question: "Arrays in JavaScript can be used to store",
+        answers: ["1. Numbers and Strings", "2. Other Arrays", "3. Booleans", "4. All of the Above"],
+        correctAnswer: "4. All of the Above"
     },
     {
-        question: "Question two",
-        answers: ["1. Answer one", "2. Answer two", "3. Answer three"],
-        correctAnswer: "1. Answer one"
+        question: "Commonly used data types DO NOT include:",
+        answers: ["1. Strings", "2. Booleans", "3. Alerts", "4. Numbers"],
+        correctAnswer: "3. Alerts"
     },
     {
-        question: "Question three",
-        answers: ["1. Answer one", "2. Answer two", "3. Answer three"],
-        correctAnswer: "3. Answer three"
+        question: "A very useful tool used during development and debugging for printing content to the debugger is:",
+        answers: ["1. JavaScript", "2. Terminal or Bash", "3. FOR-loops", "4. console.log('')"],
+        correctAnswer: "4. console.log('')"
     },
     {
-        question: "Question four",
-        answers: ["1. Answer one", "2. Answer two", "3. Answer three"],
-        correctAnswer: "1. Answer one"
+        question: "String values must be enclosed within _______ when being assigned to variables",
+        answers: ["1. Commas", "2. Curly Brackets", "3. Quotes", "4. Parenthesis"],
+        correctAnswer: "3. Quotes"
     },
 ] 
 
@@ -85,6 +85,10 @@ function askQuestions() {
         checkAnswer(ans3Btn);
     });
 
+    ans4Btn.addEventListener("click", function() {
+        checkAnswer(ans4Btn);
+    });
+
     questionHandler(0);
 }
 
@@ -95,6 +99,7 @@ function questionHandler(i) {
         ans1Btn.textContent = questions[i].answers[0];
         ans2Btn.textContent = questions[i].answers[1];
         ans3Btn.textContent = questions[i].answers[2];
+        ans4Btn.textContent = questions[i].answers[3];
 
 }  
 
