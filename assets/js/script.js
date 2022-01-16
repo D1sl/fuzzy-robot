@@ -1,7 +1,7 @@
 // Question index
 var i = 0;
 
-var timeLeft = 10;
+var timeLeft = 60;
 var timerId;
 
 var scoreStore = "highscore";
@@ -63,6 +63,7 @@ startButton.addEventListener("click", askQuestions);
 
 // Question iterator
 function askQuestions() {
+    timerEl.textContent = timeLeft;
     // Displays the timer
     document.querySelector(".scoretimer").style.display = 'inline';
     // Sets the interval in which countdown(); runs to 1000 milliseconds, or 1 second
